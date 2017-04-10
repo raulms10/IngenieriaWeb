@@ -15,6 +15,12 @@ import co.edu.udea.iw.dao.CiudadDAO;
 import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.exception.MyException;
 
+/**
+ * Pruebas de los metodos de CiudadDAO
+ * @author Raul Martinez Silgado
+ * @version 1.0
+ */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 @ContextConfiguration(locations="classpath:conf.xml")
@@ -22,12 +28,15 @@ public class CiudadDAOImplTest {
 	
 	@Autowired //Injectar de
 	CiudadDAO ciudadDAO;	
+
+	Logger logger = Logger.getLogger(MyException.class);//Para manejar los errores
 	
 	/* Para probar que la cantidad de ciudades en la base de datos
 	 * sea mayor que 0, exista por lo menos una ciudad
 	 * */
 	@Test
 	public void testObtenerCiudades() {
+		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
 		//CiudadDAO ciudadDAO = null; //Defino los objetos del tipo de la interfaz
 		List<Ciudad> lista = null; //Defino el objeto para almacenar la lista de ciudades
 		try{
@@ -37,6 +46,7 @@ public class CiudadDAOImplTest {
 		}catch (MyException e) {
 			e.printStackTrace();//Mostrar más información si ocurre un error, se debería mostar en un logger
 			fail(e.getMessage());//Ha ocurrido un error consultando las ciudades
+			logger.log(Level.ERROR,"Error consultando: "+ e.getMessage());
 		}
 	}
 	
@@ -45,6 +55,7 @@ public class CiudadDAOImplTest {
 	 * */
 	@Test
 	public void testObtenerCiudad() {
+		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
 		//CiudadDAO ciudadDAO = null; //Defino los objetos del tipo de la interfaz
 		Ciudad ciudad = null; //Defino el objeto para almacenar la ciudad
 		try{
@@ -53,12 +64,14 @@ public class CiudadDAOImplTest {
 			assertTrue(ciudad != null);//Verifico que la haya por lo menos una ciudad
 		}catch (MyException e) {
 			e.printStackTrace();//Mostrar más información si ocurre un error, se debería mostar en un logger
-			fail(e.getMessage());//Ha ocurrido un error consultando las ciudades
+			fail(e.getMessage());//Ha ocurrido un error c+++++++++++++++++++onsultando las ciudades+
+			logger.log(Level.ERROR,"Error consultando long: "+ e.getMessage());
 		}
 	}
 	
 	@Test
 	public void guardarCiudad(){
+		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
 		//CiudadDAO ciudadDAO = null; //Defino los objetos del tipo de la interfaz
 		Ciudad ciudad = new Ciudad(); //Defino el objeto para almacenar la ciudad
 		ciudad.setCodigo(45L);
@@ -71,6 +84,7 @@ public class CiudadDAOImplTest {
 		}catch (MyException e) {
 			e.printStackTrace();//Mostrar más información si ocurre un error, se debería mostar en un logger
 			fail(e.getMessage());//Ha ocurrido un error consultando las ciudades
+			logger.log(Level.ERROR,"Error guardando: "+ e.getMessage());
 		}
 	}
 	

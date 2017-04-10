@@ -29,6 +29,11 @@ public interface CiudadDAO {
 	public Ciudad obtenerCiudad(Long codigo) throws MyException;
 	
 	
+	/*
+	 * Guarda una nueva ciudad en la BD 
+	 * @param ciudad
+	 * @throws MyException
+	 */
 	public void guardarCiudad(Ciudad ciudad) throws MyException;
 
 }
