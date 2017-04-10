@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2017 01:21:30 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Usuario" table="usuarios"><!-- el nombre de la tabla diferencia entre mayusculas y minusculas -->
+        <id name="login" type="java.lang.String"><!-- No diferncia entre mayusculas y minusculas -->
+            <column name="LOGIN" length="15"/>
+            <generator class="assigned" />
+        </id>
+        <property name="nombres" type="java.lang.String" length="45" not-null="true"><!--nombre del atributo en la clase-->
+            <column name="NOMBRES" /><!-- Columna en la base de datos -->
+        </property>
+        <property name="apellidos" type="java.lang.String" length="45" not-null="true">
+            <column name="APELLIDOS" />
+        </property>
+ 		<property name="contrasena" type="java.lang.String" length="125" not-null="true">
+            <column name="CONTRASENA" />
+        </property>
+        <many-to-one class="co.edu.udea.iw.dto.Rol" name="rol" lazy="proxy" fetch="join">
+        	<column name="ROL" />
+        </many-to-one>
+            
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2017 01:21:30 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Ciudad" table="ciudades"><!-- el nombre de la tabla diferencia entre mayusculas y minusculas -->
+        <id name="codigo" type="long"><!-- No diferncia entre mayusculas y minusculas -->
+            <column name="CODIGO" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="java.lang.String" length="50" not-null="true"><!--nombre del atributo en la clase-->
+            <column name="NOMBRE" /><!-- Columna en la base de datos -->
+        </property>
+        <property name="codigoArea" type="java.lang.String" not-null="false">
+            <column name="CODIGOAREA" />
+        </property>
+    </class>
+</hibernate-mapping>

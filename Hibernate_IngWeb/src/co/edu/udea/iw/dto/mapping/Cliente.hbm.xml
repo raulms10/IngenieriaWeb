@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2017 01:21:30 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Cliente" table="clientes"><!-- el nombre de la tabla diferencia entre mayusculas y minusculas -->
+        <id name="cedula" type="java.lang.String"><!-- No diferncia entre mayusculas y minusculas -->
+            <column name="CEDULA" length="15"/>
+            <generator class="assigned" />
+        </id>
+        <property name="nombres" type="java.lang.String" length="30" not-null="true"><!--nombre del atributo en la clase-->
+            <column name="NOMBRES" /><!-- Columna en la base de datos -->
+        </property>
+        <property name="apellidos" type="java.lang.String" length="30" not-null="true">
+            <column name="APELLIDOS" />
+        </property>
+        <property name="email" type="java.lang.String" length="120" not-null="true">
+            <column name="EMAIL" />
+        </property>
+        
+        <many-to-one class="co.edu.udea.iw.dto.Usuario" name="usuarioCrea" lazy="proxy" fetch="join">
+        	<column name="USUARIOCREA" />
+        </many-to-one>
+        
+        <property name="fechaCreacion" type="java.util.Date" not-null="true">
+            <column name="FECHACREACION" />
+        </property>
+        
+        <many-to-one class="co.edu.udea.iw.dto.Usuario" name="usuarioModifica" lazy="proxy" fetch="join">
+        	<column name="USUARIOMODIFICA" />
+        </many-to-one>
+        
+        <property name="fechaModificacion" type="java.util.Date">
+            <column name="FECHAMODIFICACION" />
+        </property>
+        
+        <property name="eliminado" type="java.lang.Boolean">
+            <column name="ELIMINADO" />
+        </property>      
+                
+        <many-to-one class="co.edu.udea.iw.dto.Usuario" name="usuarioElimina" lazy="proxy" fetch="join">
+        	<column name="USUARIOELIMINA" />
+        </many-to-one>
+        
+         <property name="fechaEliminacion" type="java.util.Date">
+            <column name="FECHAELIMINACION" />
+        </property>
+        
+        <set name="direcciones">
+        	<key column="CLIENTE"/>
+        	<one-to-many class="co.edu.udea.iw.dto.Direccion"></one-to-many>
+        </set>
+            
+    </class>
+</hibernate-mapping>
