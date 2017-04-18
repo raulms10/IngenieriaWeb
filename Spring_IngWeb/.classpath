@@ -1,49 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-<<<<<<< HEAD
 	<classpathentry kind="src" path="test"/>
-=======
->>>>>>> 90df21d6eee16952c7761e665a4692322753af25
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/apache-log4j-1.2.17/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/hibernate3.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/javassist-3.12.0.GA.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Hibernate_IngWeb/recursos/recursos/mysql-connector-java-5.1.22-bin.jar"/>
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/com.springsource.org.aopalliance-1.0.0.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/commons-logging.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-aop-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-beans-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-context-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-core-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-expression-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-jdbc-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-orm-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-test-4.1.6.RELEASE.jar" sourcepath="/export/estudiantes/rantonio.martinez/.m2/repository/org/springframework/spring-test/4.1.6.RELEASE/spring-test-4.1.6.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-tx-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/IngenieriaWeb/Spring_IngWeb/recursos/Spring4/spring-web-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/commons-logging.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-aop-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-beans-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-context-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-core-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-expression-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-jdbc-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-orm-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-test-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-tx-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/Spring4/spring-web-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/hibernate3.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/Escritorio/recursos/apache-log4j-1.2.17/log4j-1.2.17.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-=======
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/com.springsource.org.aopalliance-1.0.0.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/commons-logging.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-aop-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-beans-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-context-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-core-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-expression-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-jdbc-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-orm-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-test-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-tx-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/export/estudiantes/rantonio.martinez/IngWeb2/Spring_IngWeb/recursos/Spring4/spring-web-4.1.6.RELEASE.jar"/>
->>>>>>> 90df21d6eee16952c7761e665a4692322753af25
 	<classpathentry kind="output" path="bin"/>
 </classpath>

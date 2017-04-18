@@ -4,8 +4,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import co.edu.udea.spring.dto.Usuario;
-import co.edu.udea.spring.exception.MyException;
+import co.edu.udea.iw.dao.UsuarioDAO;
+import co.edu.udea.iw.dto.Usuario;
+import co.edu.udea.iw.exception.MyException;
 /*
  * Para definir los metodos que vamos a usar en el DAO
  * de la Usuario
@@ -16,22 +17,23 @@ import co.edu.udea.spring.exception.MyException;
  * **/
 public class UsuarioDAOImpl implements UsuarioDAO{
 	
-	SessionFactory sessionFactory;
-	
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
+	SessionFactory sessionFact;
+
+
+	public SessionFactory getSessionFact() {
+		return sessionFact;
 	}
 
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
+	public void setSessionFact(SessionFactory sessionFact) {
+		this.sessionFact = sessionFact;
 	}
 	
 	@Override
-	public Usuario obtener(String login) throws MyException {
+	public Usuario obtenerUsuario(String login) throws MyException {
 		Usuario usuario = new Usuario();
 		Session session = null;
 		try{
-			session = sessionFactory.getCurrentSession();
+			session = sessionFact.getCurrentSession();
 			usuario = (Usuario) session.get(Usuario.class,login);
 		}catch (HibernateException e) {
 			throw new MyException("Error consultando usuario", e);

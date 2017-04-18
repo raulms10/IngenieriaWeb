@@ -9,8 +9,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
 
-import co.edu.udea.spring.dto.Cliente;
-import co.edu.udea.spring.exception.MyException;
+import co.edu.udea.iw.dao.ClienteDAO;
+import co.edu.udea.iw.dto.Cliente;
+import co.edu.udea.iw.exception.MyException;
 
 /*
  * Para definir los metodos que vamos a usar en el DAO
@@ -23,14 +24,15 @@ import co.edu.udea.spring.exception.MyException;
 
 public class ClienteDAOImpl implements ClienteDAO {
 	
-	SessionFactory sessionFactory;
-	
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
+	SessionFactory sessionFact;
+
+
+	public SessionFactory getSessionFact() {
+		return sessionFact;
 	}
 
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
+	public void setSessionFact(SessionFactory sessionFact) {
+		this.sessionFact = sessionFact;
 	}
 
 	/** 
@@ -38,12 +40,12 @@ public class ClienteDAOImpl implements ClienteDAO {
 	 * @return List de clientes
 	 */
 	@Override
-	public List<Cliente> obtener() throws MyException {
+	public List<Cliente> obtenerClientes() throws MyException {
 		List<Cliente> clientes = new ArrayList<Cliente>();
 		Session session = null;
 		Criteria criteria = null;
 		try{
-			session = sessionFactory.getCurrentSession();
+			session = sessionFact.getCurrentSession();
 			criteria = session.createCriteria(Cliente.class);
 			criteria.addOrder(Order.asc("fechaCreacion"));
 			//SELECT * Clientes Order by FechaCreacion asc
@@ -58,10 +60,10 @@ public class ClienteDAOImpl implements ClienteDAO {
 	 * @see co.edu.udea.spring.dao.ClienteDAO#guardar(co.edu.udea.spring.dto.Cliente)
 	 */
 	@Override
-	public void guardar(Cliente cliente) throws MyException {
+	public void guardarCliente(Cliente cliente) throws MyException {
 		Session session = null;
 		try{
-			session = sessionFactory.getCurrentSession();
+			session = sessionFact.getCurrentSession();
 			session.save(cliente);
 		}catch (HibernateException e) {
 			throw new MyException("Error guardando cliente", e);

@@ -16,11 +16,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import co.edu.udea.spring.dao.ClienteDAO;
-import co.edu.udea.spring.dto.Cliente;
-import co.edu.udea.spring.dto.Direccion;
-import co.edu.udea.spring.dto.Usuario;
-import co.edu.udea.spring.exception.MyException;
+import co.edu.udea.iw.dao.ClienteDAO;
+import co.edu.udea.iw.dto.Cliente;
+import co.edu.udea.iw.dto.Direccion;
+import co.edu.udea.iw.dto.Usuario;
+import co.edu.udea.iw.exception.MyException;
 
 
 /**
@@ -31,7 +31,7 @@ import co.edu.udea.spring.exception.MyException;
  */
 @RunWith(SpringJUnit4ClassRunner.class)//Correr con otro running
 @Transactional//transaccional
-@ContextConfiguration(locations="classpath:conf.xml")//para saber donde esta el archivo de configuracion de spring para cargarlo
+@ContextConfiguration(locations="classpath:co/edu/udea/iw/conf/conf.xml")//para saber donde esta el archivo de configuracion de spring para cargarlo
 public class ClienteDAOImplTest {
 
 	@Autowired//Inyectar datos desde la base de datos
@@ -47,15 +47,15 @@ public class ClienteDAOImplTest {
 	@Test
 	public void testObtener(){
 		List<Cliente> resultado = null;
-		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
+		PropertyConfigurator.configure("src/co/edu/udea/iw/pt/log4j.properties");//propiedades para configurar log4j
 		try{
 			
-			resultado = clienteDAO.obtener();
+			resultado = clienteDAO.obtenerClientes();
 			for(Cliente c: resultado){
 				System.out.println("Cliente: " + c.getNombres() +" Cedula: "+c.getCedula());
 				Set<Direccion> dir = c.getDirecciones();
 				for(Direccion d: dir){
-					System.out.println("Nombre: "+ c.getNombres() + " Dirección: "+d.getDireccion());
+					System.out.println("Nombre: "+ c.getNombres() + " Direcciï¿½n: "+d.getDireccion());
 				}
 			}
 			assertTrue(resultado.size() > 0);
@@ -72,7 +72,7 @@ public class ClienteDAOImplTest {
 	public void testGuardar() {
 		Cliente cliente = null; 
 		Usuario usuario = null;
-		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
+		PropertyConfigurator.configure("src/co/edu/udea/iw/pt/log4j.properties");//propiedades para configurar log4j
 		try{
 			cliente = new Cliente();
 			cliente.setCedula("333");
@@ -84,7 +84,7 @@ public class ClienteDAOImplTest {
 			cliente.setUsuarioCrea(usuario);
 			cliente.setFechaCreacion(new Date());
 			
-			clienteDAO.guardar(cliente); 
+			clienteDAO.guardarCliente(cliente); 
 			assertTrue(cliente != null);
 		}catch (MyException e) {
 			logger.log(Level.ERROR, "Error guardadno: "+e.getMessage());

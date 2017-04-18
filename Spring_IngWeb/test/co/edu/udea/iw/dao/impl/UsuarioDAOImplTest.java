@@ -12,9 +12,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import co.edu.udea.spring.dao.UsuarioDAO;
-import co.edu.udea.spring.dto.Usuario;
-import co.edu.udea.spring.exception.MyException;
+import co.edu.udea.iw.dao.UsuarioDAO;
+import co.edu.udea.iw.dto.Usuario;
+import co.edu.udea.iw.exception.MyException;
 
 /**
  * Pruebas de los metodos de UsuarioDAO
@@ -23,7 +23,7 @@ import co.edu.udea.spring.exception.MyException;
  */
 @RunWith(SpringJUnit4ClassRunner.class)//Correr con otro running
 @Transactional//transaccional
-@ContextConfiguration(locations="classpath:conf.xml")//para saber donde esta el archivo de configuracion de spring para cargarlo
+@ContextConfiguration(locations="classpath:co/edu/udea/iw/conf/conf.xml")//para saber donde esta el archivo de configuracion de spring para cargarlo
 public class UsuarioDAOImplTest {
 
 	@Autowired//Inyectar datos desde la base de datos
@@ -37,10 +37,10 @@ public class UsuarioDAOImplTest {
 	 */
 	@Test
 	public void testObtener() {
-		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
+		PropertyConfigurator.configure("src/co/edu/udea/iw/pt/log4j.properties");//propiedades para configurar log4j
 		Usuario usuario = null; //Defino el objeto para almacenar el Usuario
 		try{
-			usuario = usuarioDAO.obtener("elver"); 
+			usuario = usuarioDAO.obtenerUsuario("elver"); 
 			System.out.println("Usuario: "+usuario.getNombres()+" Nombre del Rol: "+usuario.getRol().getNombre());
 			assertTrue(usuario != null);		
 		}catch (MyException e) {

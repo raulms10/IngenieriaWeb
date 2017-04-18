@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +26,7 @@ import co.edu.udea.iw.exception.MyException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-@ContextConfiguration(locations="classpath:conf.xml")
+@ContextConfiguration(locations="classpath:co/edu/udea/iw/conf/conf.xml")
 public class CiudadDAOImplTest {
 	
 	@Autowired //Injectar de
@@ -36,7 +39,7 @@ public class CiudadDAOImplTest {
 	 * */
 	@Test
 	public void testObtenerCiudades() {
-		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
+		PropertyConfigurator.configure("src/co/edu/udea/iw/pt/log4j.properties");//propiedades para configurar log4j
 		//CiudadDAO ciudadDAO = null; //Defino los objetos del tipo de la interfaz
 		List<Ciudad> lista = null; //Defino el objeto para almacenar la lista de ciudades
 		try{
@@ -55,7 +58,7 @@ public class CiudadDAOImplTest {
 	 * */
 	@Test
 	public void testObtenerCiudad() {
-		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
+		PropertyConfigurator.configure("src/co/edu/udea/iw/pt/log4j.properties");//propiedades para configurar log4j
 		//CiudadDAO ciudadDAO = null; //Defino los objetos del tipo de la interfaz
 		Ciudad ciudad = null; //Defino el objeto para almacenar la ciudad
 		try{
@@ -71,7 +74,7 @@ public class CiudadDAOImplTest {
 	
 	@Test
 	public void guardarCiudad(){
-		PropertyConfigurator.configure("src/log4j.properties");//propiedades para configurar log4j
+		PropertyConfigurator.configure("src/co/edu/udea/iw/pt/log4j.properties");//propiedades para configurar log4j
 		//CiudadDAO ciudadDAO = null; //Defino los objetos del tipo de la interfaz
 		Ciudad ciudad = new Ciudad(); //Defino el objeto para almacenar la ciudad
 		ciudad.setCodigo(45L);
