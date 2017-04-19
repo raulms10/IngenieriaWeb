@@ -7,9 +7,10 @@ import org.hibernate.SessionFactory;
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
-/*
+
+/**
  * Para definir los metodos que vamos a usar en el DAO
- * de la Usuario
+ * de Usuario
  * 
  * @author Raul Martinez Silgado
  * @version 1.0
@@ -28,6 +29,14 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		this.sessionFact = sessionFact;
 	}
 	
+	/**
+	 * Entrega el Usuario identificado con login ingresado como parámetro
+	 * @param login
+	 * @return Usuario
+	 * @see co.edu.udea.iw.dao.impl.UsuarioDAOImpl#obtenerUsuario(String)
+	 * @throws MyException
+	 * Lanzamos nuestra propia exception para manejarla en una capa superior
+	 */
 	@Override
 	public Usuario obtenerUsuario(String login) throws MyException {
 		Usuario usuario = new Usuario();

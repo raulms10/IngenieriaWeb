@@ -15,7 +15,7 @@ import co.edu.udea.iw.dao.CiudadDAO;
 import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.exception.MyException;
 
-/*
+/**
  * Para definir los metodos que vamos a usar en el DAO
  * de la Ciudad
  * 
@@ -37,7 +37,14 @@ public class CiudadDAOImpl implements CiudadDAO{
 	public void setSessionFact(SessionFactory sessionFact) {
 		this.sessionFact = sessionFact;
 	}
-
+	
+	/**
+	 * Entrega todas las ciudades que existan en la BD ordenadas por nombre
+	 * @return Lista de ciudades
+	 * @see co.edu.udea.iw.dao.impl.CiudadDAOImpl#obtenerCiudad()
+	 * @throws MyException
+	 * Lanzamos nuestra propia exception para manejarla en una capa superior
+	 */
 	@Override
 	public List<Ciudad> obtenerCiudad() throws MyException {
 		List<Ciudad> lista = new ArrayList<Ciudad>();
@@ -53,6 +60,13 @@ public class CiudadDAOImpl implements CiudadDAO{
 		return lista;
 	}
 
+	/** 
+	 * Entrega la ciudad que existan en la BD con el codigo ingresado como parametro
+	 * @return Ciudad
+	 * @see co.edu.udea.iw.dao.impl.CiudadDAOImpl#obtenerCiudad(Long)
+	 * @throws MyException 
+	 * Lanzamos nuestra propia exception para manejarla en una capa superior
+	 * */	
 	@Override
 	public Ciudad obtenerCiudad(Long codigo) throws MyException {
 		Ciudad ciudad = new Ciudad();
@@ -71,7 +85,14 @@ public class CiudadDAOImpl implements CiudadDAO{
 		}
 		return ciudad;
 	}
-
+	
+	/**
+	 * Guarda una nueva ciudad en la BD 
+	 * @param ciudad
+	 * @see co.edu.udea.iw.dao.impl.CiudadDAOImpl#guardarCiudad(Ciudad)
+	 * @throws MyException
+	 * Lanzamos nuestra propia exception para manejarla en una capa superior
+	 */
 	@Override
 	public void guardarCiudad(Ciudad ciudad) throws MyException {
 		Session session = null;

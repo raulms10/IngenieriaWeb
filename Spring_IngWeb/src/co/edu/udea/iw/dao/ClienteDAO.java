@@ -5,7 +5,7 @@ import java.util.List;
 import co.edu.udea.iw.dto.Cliente;
 import co.edu.udea.iw.exception.MyException;
 
-/*
+/**
  * Para definir los metodos que vamos a usar en el DAO
  * de los Clientes
  * 
@@ -14,17 +14,22 @@ import co.edu.udea.iw.exception.MyException;
  * 
  * */
 
-
 public interface ClienteDAO {
 	
-	public List<Cliente> obtenerClientes() throws MyException;
 	/**
-	 * Entrega la lista de clientes ordenados por su fecha de creacion
-	 * @return Lista de clientes
-	 * 
+	 * Entrega todos los clientes que existan en la BD ordenados por su fecha de creacion
+	 * @return Lista de Clientes
+	 * @throws MyException
+	 * Lanzamos nuestra propia exception para manejarla en una capa superior
 	 */
-	public void guardarCliente(Cliente cliente) throws MyException;
+	public List<Cliente> obtenerClientes() throws MyException;
+	
+	
 	/**
 	 * Guarda el cliente en la base de datos
+	 * @param cliente
+	 * @throws MyException
+	 * Lanzamos nuestra propia exception para manejarla en una capa superior
 	 */
+	public void guardarCliente(Cliente cliente) throws MyException;
 }

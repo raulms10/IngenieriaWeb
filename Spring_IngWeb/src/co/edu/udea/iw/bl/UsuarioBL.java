@@ -4,9 +4,8 @@ import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
-/*
+/**
  * Para definir la lógica de negocio del Usuario
- * 
  * 
  * @author Raul Martinez Silgado
  * @version 1.0
@@ -17,6 +16,33 @@ public class UsuarioBL {
 	
 	private UsuarioDAO usuarioDAO;
 
+	/**
+	 * Para verificar que el login y la contraseña ingresados como parámetros correspondan
+	 * al de un Usuario en nuestra BD
+	 * @param login
+	 * @param pass
+	 * @return true o false(el usuario es válido o no)
+	 * @throws MyException
+	 */
+	public boolean validarUsuario(String login, String pass) throws MyException{
+		if (login == null || "".equals(login) ) { //Verificamos que el login no sea vacío
+			throw new MyException("Error: El login ingresado no es válido");
+		}
+		if (pass == null || "".equals(pass) ) { //Verificamos que la contraseña no sea vacía
+			throw new MyException("Error: La contraseña no puede estar vacía, verifique");
+		}
+		Usuario usuario = getUsuarioDAO().obtenerUsuario(login);//Obtenemos el usuario en el BD con el login correspondiente
+		if (usuario != null) { //Verificamos de que el usuario si exista en el BD
+			//System.out.println("Usuario encontrado, Pass: "+ usuario.getContrasena());
+			if (pass.equals(usuario.getContrasena())) { //Verificamos que las contraseñas
+				return true; //Usuario validado
+			}else{
+				System.out.println("Contraseña incorrecta");
+			}			
+		}
+		return false; //Usuario no válido, la contraseña o el login son incorrectos
+	}
+	
 	public UsuarioDAO getUsuarioDAO() {
 		return usuarioDAO;
 	}
@@ -24,25 +50,4 @@ public class UsuarioBL {
 	public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
 		this.usuarioDAO = usuarioDAO;
 	}
-	
-	public boolean validarUsuario(String login, String pass) throws MyException{
-		
-		if (login == null ||"".equals(login) ) {
-			throw new MyException("Error: El login ingresado no es válido");
-		}
-		if (pass == null ||"".equals(pass) ) {
-			throw new MyException("Error: La contraseña no puede estar vacía, verifique");
-		}
-		Usuario usuario = getUsuarioDAO().obtenerUsuario(login);//Buscamos en la base de datos el usuario por su login
-		if (usuario != null) {
-			//System.out.println("Usuario encontrado, Pass: "+ usuario.getContrasena());
-			if (pass.equals(usuario.getContrasena())) {
-				return true;
-			}else{
-				System.out.println("Contraseña incorrecta");
-			}			
-		}
-		return false;
-	}
-
 }

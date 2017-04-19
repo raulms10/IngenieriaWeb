@@ -1,6 +1,6 @@
 package co.edu.udea.iw.dto;
 
-/* 
+/** 
  * @author Raul Martinez Silgado
  * @version 1.0
  * 

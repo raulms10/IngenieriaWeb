@@ -1,5 +1,6 @@
 package co.edu.udea.iw.dao.impl;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +14,9 @@ import co.edu.udea.iw.dao.ClienteDAO;
 import co.edu.udea.iw.dto.Cliente;
 import co.edu.udea.iw.exception.MyException;
 
-/*
+/**
  * Para definir los metodos que vamos a usar en el DAO
- * de la Cliente
+ * del Cliente
  * 
  * @author Raul Martinez Silgado
  * @version 1.0
@@ -26,7 +27,6 @@ public class ClienteDAOImpl implements ClienteDAO {
 	
 	SessionFactory sessionFact;
 
-
 	public SessionFactory getSessionFact() {
 		return sessionFact;
 	}
@@ -35,9 +35,12 @@ public class ClienteDAOImpl implements ClienteDAO {
 		this.sessionFact = sessionFact;
 	}
 
-	/** 
-	 * @see co.edu.udea.spring.dao.ClienteDAO#obtener()
-	 * @return List de clientes
+	/**
+	 * Entrega todos los clientes que existan en la BD ordenados por su fecha de creacion
+	 * @return Lista de Clientes
+	 * @see co.edu.udea.iw.dao.impl.ClienteDAOImpl#obtenerClientes()
+	 * @throws MyException
+	 * Lanzamos nuestra propia exception para manejarla en una capa superior
 	 */
 	@Override
 	public List<Cliente> obtenerClientes() throws MyException {
@@ -57,14 +60,18 @@ public class ClienteDAOImpl implements ClienteDAO {
 	}
 
 	/**
-	 * @see co.edu.udea.spring.dao.ClienteDAO#guardar(co.edu.udea.spring.dto.Cliente)
+	 * Guarda el cliente en la base de datos
+	 * @param cliente
+	 * @see co.edu.udea.iw.dao.impl.ClienteDAOImpl#guardarCliente(Cliente)
+	 * @throws MyException
+	 * Lanzamos nuestra propia exception para manejarla en una capa superior
 	 */
 	@Override
 	public void guardarCliente(Cliente cliente) throws MyException {
 		Session session = null;
 		try{
 			session = sessionFact.getCurrentSession();
-			session.save(cliente);
+			session.save(cliente);			
 		}catch (HibernateException e) {
 			throw new MyException("Error guardando cliente", e);
 		}

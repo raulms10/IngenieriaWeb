@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.exception.MyException;
 
-/*
- * Pruebas de los metodos de la lógica de Negocio Usuario
+/**
+ * Pruebas de los metodos de la lógica de Negocio de Usuario
  * @author Raul Martinez Silgado
  * @version 1.0
  */

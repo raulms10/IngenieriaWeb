@@ -22,13 +22,13 @@ import co.edu.udea.iw.dto.Direccion;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
-
 /**
  * Pruebas de los metodos de ClienteDAO
  * @author Raul Martinez Silgado
- * @version 2.0
+ * @version 1.0
  *
  */
+
 @RunWith(SpringJUnit4ClassRunner.class)//Correr con otro running
 @Transactional//transaccional
 @ContextConfiguration(locations="classpath:co/edu/udea/iw/conf/conf.xml")//para saber donde esta el archivo de configuracion de spring para cargarlo
@@ -49,7 +49,6 @@ public class ClienteDAOImplTest {
 		List<Cliente> resultado = null;
 		PropertyConfigurator.configure("src/co/edu/udea/iw/pt/log4j.properties");//propiedades para configurar log4j
 		try{
-			
 			resultado = clienteDAO.obtenerClientes();
 			for(Cliente c: resultado){
 				System.out.println("Cliente: " + c.getNombres() +" Cedula: "+c.getCedula());

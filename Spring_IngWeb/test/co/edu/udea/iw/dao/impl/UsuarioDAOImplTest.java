@@ -21,6 +21,7 @@ import co.edu.udea.iw.exception.MyException;
  * @author Raul Martinez Silgado
  * @version 1.0
  */
+
 @RunWith(SpringJUnit4ClassRunner.class)//Correr con otro running
 @Transactional//transaccional
 @ContextConfiguration(locations="classpath:co/edu/udea/iw/conf/conf.xml")//para saber donde esta el archivo de configuracion de spring para cargarlo
@@ -31,10 +32,7 @@ public class UsuarioDAOImplTest {
 	
 	Logger logger = Logger.getLogger(MyException.class);//Para manejar los errores
 	
-	/**
-	 * Test method for {@link co.edu.udea.spring.dao.UsuarioDAOImpl#obtener(java.lang.String)}.
-	 * Prueba de obtener(String login)
-	 */
+	
 	@Test
 	public void testObtener() {
 		PropertyConfigurator.configure("src/co/edu/udea/iw/pt/log4j.properties");//propiedades para configurar log4j

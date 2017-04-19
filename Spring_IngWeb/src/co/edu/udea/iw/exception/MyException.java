@@ -2,7 +2,7 @@ package co.edu.udea.iw.exception;
 
 import org.apache.log4j.Logger;
 
-/*
+/**
  * Para manejar nuestras propias excepciones
  * y mandarlas a un nivel(capa) superior 
  * 
