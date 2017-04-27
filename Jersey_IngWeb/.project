@@ -3,6 +3,7 @@
 	<name>Jersey_IngWeb</name>
 	<comment></comment>
 	<projects>
+		<project>Spring_IngWeb</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -34,11 +34,10 @@ public class UsuarioBL {
 		Usuario usuario = getUsuarioDAO().obtenerUsuario(login);//Obtenemos el usuario en el BD con el login correspondiente
 		if (usuario != null) { //Verificamos de que el usuario si exista en el BD
 			//System.out.println("Usuario encontrado, Pass: "+ usuario.getContrasena());
-			if (pass.equals(usuario.getContrasena())) { //Verificamos que las contraseñas
-				return true; //Usuario validado
-			}else{
-				System.out.println("Contraseña incorrecta");
-			}			
+			if (pass.equals(usuario.getContrasena()))  //Verificamos que las contraseñas
+				return true; //Usuario validado			
+		}else{
+			throw new MyException("Usuario o contraseña incorrecto");
 		}
 		return false; //Usuario no válido, la contraseña o el login son incorrectos
 	}
