@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.dao.ClienteDAO;
 import co.edu.udea.iw.dao.UsuarioDAO;
@@ -18,7 +19,7 @@ import co.edu.udea.iw.exception.MyException;
  * @version 1.0
  * 
  * */
-
+@Transactional
 public class ClienteBL {
 	
 	private ClienteDAO clienteDAO; //La inicialización de está variable la hace automáticamente Spring por medio del bean clienteBL

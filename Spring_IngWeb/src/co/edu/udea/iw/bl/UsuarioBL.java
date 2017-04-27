@@ -1,5 +1,7 @@
 package co.edu.udea.iw.bl;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
@@ -12,6 +14,7 @@ import co.edu.udea.iw.exception.MyException;
  * 
  * */
 
+@Transactional
 public class UsuarioBL {
 	
 	private UsuarioDAO usuarioDAO;
@@ -34,12 +37,14 @@ public class UsuarioBL {
 		Usuario usuario = getUsuarioDAO().obtenerUsuario(login);//Obtenemos el usuario en el BD con el login correspondiente
 		if (usuario != null) { //Verificamos de que el usuario si exista en el BD
 			//System.out.println("Usuario encontrado, Pass: "+ usuario.getContrasena());
-			if (pass.equals(usuario.getContrasena()))  //Verificamos que las contraseñas
-				return true; //Usuario validado			
-		}else{
-			throw new MyException("Usuario o contraseña incorrecto");
+			if (pass.equals(usuario.getContrasena())){  //Verificamos que las contraseñas
+				throw new MyException("Usuario validado");//Usuario validado
+	
+			}
 		}
-		return false; //Usuario no válido, la contraseña o el login son incorrectos
+		throw new MyException("Usuario o contraseña incorrecto");
+	
+		//return false; //Usuario no válido, la contraseña o el login son incorrectos
 	}
 	
 	public UsuarioDAO getUsuarioDAO() {

@@ -32,7 +32,7 @@ public class UsuarioWS {
 		try{
 			usuarioBL.validarUsuario(login, pass);
 		}catch (MyException e) {
-			return e.getMessage();
+			retorno = e.getMessage();
 		}
 		
 		return retorno;

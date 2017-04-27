@@ -60,5 +60,8 @@
 		<property name="usuarioDAO" ref="usuarioDAO"></property>
 	</bean>
 	
+	<!--Si no se le coloca mas nada(transaction-manager) el busca el bean a transactionManager -->	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
 	<context:component-scan base-package="co.edu.udea.iw.ws "></context:component-scan>
 </beans>
