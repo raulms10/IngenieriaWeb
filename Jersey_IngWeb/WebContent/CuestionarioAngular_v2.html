@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario</title>
+<script type="text/javascript" src="recursos/js/angular.min.js"></script>
+<script type="text/javascript" src="recursos/js/CuestionarioController_v2.js"></script>
+<link type="text/css" rel="stylesheet" href="recursos/css/estilo.css">
+</head>
+<body ng-app="modCuestionario">
+	<div ng-controller="contCuestionario">
+		<div class="preguntas">
+			<div ng-repeat="pregunta in preguntas" class="pregunta">
+				<p class="estado-{{pregunta.estado}}">{{pregunta.texto}}</p>
+				<div ng-repeat="respuesta in pregunta.respPosibles">
+					<input type="radio" value="{{respuesta.id}}" 
+					name="pregunta{{pregunta.id}}"
+					id="respuesta{{pregunta.id}}{{respuesta.id}}" 
+					ng-model="pregunta.respUser" />
+					<!--ng-change="validar(pregunta)" -->
+					<!-- <span>{{respuesta.texto}}</span> -->
+					<label for="respuesta{{pregunta.id}}{{respuesta.id}}">{{respuesta.texto}}</label>
+				</div>
+				
+			</div>
+			<button ng-click="calificar()">Calificar</button>
+		</div>
+		<div class="estadoUsuario {{estadoUsuario}}">
+			<span>Has acertado {{respCorrectas}} de {{preguntas.length}}</span>
+		</div>
+	</div>
+</body>
+</html>
