@@ -41,6 +41,7 @@ public class ClienteWS {
 	}
 	
 	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<ClienteJersey> obtenerClientes() throws RemoteException{
 		List<ClienteJersey> respuesta = new ArrayList<ClienteJersey>();
 		try{

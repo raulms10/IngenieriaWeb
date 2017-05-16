@@ -1,0 +1,14 @@
+<div>
+	<table border="1" width="100%">
+		<tr>
+			<th>Identificación</th>
+			<th>Nombre Completo</th>
+			<th>Correo electrónico</th>
+		</tr>
+		<tr ng-repeat="cliente in listaClientes">
+			<td>{{cliente.cedula}}</td>
+			<td>{{cliente.nombres}} {{cliente.apellidos}}</td>
+			<td>{{cliente.correo}}</td>
+		</tr>
+	</table>
+</div>
