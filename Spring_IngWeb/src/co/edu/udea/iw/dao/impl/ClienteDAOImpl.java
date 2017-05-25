@@ -9,6 +9,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.dao.ClienteDAO;
 import co.edu.udea.iw.dto.Cliente;
@@ -22,7 +23,6 @@ import co.edu.udea.iw.exception.MyException;
  * @version 1.0
  * 
  * **/
-
 public class ClienteDAOImpl implements ClienteDAO {
 	
 	SessionFactory sessionFact;

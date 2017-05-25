@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.dao.CiudadDAO;
 import co.edu.udea.iw.dto.Ciudad;
@@ -23,7 +24,6 @@ import co.edu.udea.iw.exception.MyException;
  * @version 1.0
  * 
  * **/
-
 public class CiudadDAOImpl implements CiudadDAO{
 	
 	//@Autowired
